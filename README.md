@@ -8,7 +8,8 @@ $.modalForm({
   fields: [ 'username', 'password' ],
   submit: 'Sign In'
 }).on('submit', function(event, inputs) {
-  // inputs = { username, password }
+  // event.targt => <div class="modal">
+  // inputs      => { username, password }
 })
 ```
 
