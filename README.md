@@ -13,6 +13,10 @@ $.modalForm({
 })
 ```
 
+results in:
+
+![Screenshot](https://raw.github.com/gr2m/bootstrap.modalform.js/master/assets/screenshot.png)
+
 License
 ---------
 
