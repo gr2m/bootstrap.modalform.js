@@ -1,0 +1,8 @@
+{
+  "name": "bootstrap.modalform",
+  "version": "1.0.0",
+  "main": "bootstrap.modalform.js",
+  "ignore": [
+    "**/.*"
+  ]
+}
