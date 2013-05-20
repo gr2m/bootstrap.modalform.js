@@ -4,7 +4,7 @@
 
   $( function() {
     var modalId = "modal-form-" + parseInt(Math.random() * 1000, 10);
-    var $cont = $('<div id="'+modalId+'"></div>');
+    var $cont = $('<div id="'+modalId+'" class="modalForm"></div>');
     $('body').append( $cont );
 
     $.modalForm = function(options) {
@@ -25,7 +25,17 @@
       }
       html += "    <div class=\"modal-body\">";
       while (field = fields.shift()) {
-        type = /password/.test(field) ? 'password' : 'text';
+        switch (true) {
+          case /password/.test(field):
+            type = 'password'
+            break
+          case /email/.test(field):
+            type = 'email'
+            break
+          default:
+            type = 'text'
+        }
+        
         html += "      <input class=\"span3\" type=\""+type+"\" name=\""+field+"\" placeholder=\""+field.replace(/_/g, ' ')+"\"><br \/>";
       }
       html += "    <\/div>";
@@ -54,6 +64,7 @@
         });
 
         $modal.trigger('submit', inputs);
+        $modal.modal('hide');
       });
 
       $modal.on('error', function(event, error) {
